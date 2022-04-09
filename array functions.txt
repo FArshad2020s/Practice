@@ -1,0 +1,43 @@
+*count(array) ===> integer number 
+	this function returns array size(number of members)
+
+*is_array(data) ===> true or false
+	this function specifies than variable is array or no 
+
+*in_array(data,array) ===> true or false
+	in function barrasi mikonad ke data dar array vogood darad ya na
+
+*array_merge(array1,array2,...,arrayN) ===> array
+	this function returns a array than includes from all of the inputed arrays
+
+*array_values(array) ===> array
+	this function returns values of the inputed array
+
+*array_keys(array) ===> array
+	this function returns keys of the inputed array
+
+*array_key_exists(data,array) ===> false or true
+	this function returns true if data exists in keys array of inputed array
+	else this function returns false
+
+*array_push(array var,data) ===> new number of array member
+	this function add inputed data to inputed array variable
+
+*array_pop(array var) ===> value of deleted member(last member from old array)
+	this function deletes last member from inputed list
+
+*array_shift(array var) ===> value of deleted member(first member of old array)
+	this function deletes first member from inputed list
+
+*array_map(function,array) ==> array
+	this function inputes in inputed function, everymember form inputed array then
+	makes a new array
+
+*array_flip(array) ===> array
+	jay key va value ra avas mikonad
+
+*array_rand(array) ===> a member of keys array of inputed array
+	this function selects a random member from keys of array and return that
+
+*array_reverse(array) ===> array
+	this function returns reversed of inputed array
