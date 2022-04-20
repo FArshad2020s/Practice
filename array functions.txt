@@ -41,3 +41,6 @@
 
 *array_reverse(array) ===> array
 	this function returns reversed of inputed array
+*array_filter(array,function($var)) ===> array
+	in function ozv ha ra ke pas az vrood be function javab true migirand dar yek array jadid
+	mirizad va on ra barmigardanad 
