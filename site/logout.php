@@ -1,6 +1,5 @@
 <?php
-session_start();
+require "_load.php";
 unset($_SESSION['id']);
 header("Location: login.php");
 exit();
-?>
