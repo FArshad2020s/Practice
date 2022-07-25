@@ -1,8 +1,11 @@
 <?php
 require "_load.php";
 if(isset($_POST['username'],$_POST['password'])){
-	$username=$_POST['username'];
-	$password=$_POST['password'];
+	$username=trim($_POST['username']);
+	$password=trim($_POST['password']);
+	if($username==="" or $password===""){
+		exit("enter username and password properly");
+	}
 	$sql="SELECT `id` FROM login WHERE `username`=:username and `password`=:password;";
 	$stmt=$db->prepare($sql);
 	$stmt->bindParam("username",$username);
