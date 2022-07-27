@@ -37,8 +37,42 @@ function getProducts_of_project(int $projectId):array{
 	return $products;
 }
 
-function logout(){
-	unset($_SESSION['id']);
-	header("Location: login.php");
-	exit();
+function findProject(int $productId){
+	global $db;
+	$sql="SELECT `project_id` FROM `products` WHERE `id` = :productId";
+	$stmt = $db->prepare($sql);
+	$stmt->bindParam("productId",$productId);
+	$stmt->execute();
+	$project_id=$stmt->fetch(PDO::FETCH_ASSOC)['project_id'];
+	$sql2="SELECT `name` FROM `projects` WHERE `id` = :project_id";
+	$stmt = $db->prepare($sql2);
+	$stmt->bindParam("project_id",$project_id);
+	$stmt->execute();
+	return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+}
+
+
+function getProduct($productId){
+	global $db;
+	$sql="SELECT `name` FROM `products` WHERE `id`=:productId";
+	$stmt=$db->prepare($sql);
+	$stmt->bindParam("productId",$productId);;
+	$stmt->execute();
+	return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+}
+
+function getActivity($activity_id){
+	global $db ;
+	$sql="SELECT `name` FROM `activities` WHERE `id`=:activity_id";
+	$stmt=$db->prepare($sql);
+	$stmt->bindParam("activity_id",$activity_id);
+	$stmt->execute();
+	return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+}
+
+function getActivityIds():array{
+	global $db;
+	$sql = "SELECT id FROM activities";
+	$ids = $db->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+	return $ids;
 }

@@ -19,7 +19,7 @@ if($products===[]){
 	exit("no any product for this project");
 }
 echo "products: <br><br>"; 
-?><form action=""><?php
+?><form action="report.php"><?php
 foreach($products as $product){
 	echo "name: ".$product['name']." --- "."code: ".$product['code'];
 	?><input type="radio" name="productId" value=<?= $product['id']?>><br><?php
