@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2022 at 11:35 AM
+-- Generation Time: Jul 27, 2022 at 07:20 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activity`
+-- Table structure for table `activities`
 --
 
-CREATE TABLE `activity` (
+CREATE TABLE `activities` (
   `id` int(11) NOT NULL,
   `name` varchar(80) COLLATE utf8_persian_ci NOT NULL,
   `create_at` int(11) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `activity` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
--- Dumping data for table `activity`
+-- Dumping data for table `activities`
 --
 
-INSERT INTO `activity` (`id`, `name`, `create_at`, `update_at`) VALUES
+INSERT INTO `activities` (`id`, `name`, `create_at`, `update_at`) VALUES
 (1, 'تفکر', 111, NULL),
 (2, 'آموزش', 111, NULL),
 (3, 'مطالعه', 111, NULL),
@@ -118,9 +118,9 @@ INSERT INTO `projects` (`id`, `code`, `name`, `createAt`, `updateAt`) VALUES
 --
 
 --
--- Indexes for table `activity`
+-- Indexes for table `activities`
 --
-ALTER TABLE `activity`
+ALTER TABLE `activities`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -146,9 +146,9 @@ ALTER TABLE `projects`
 --
 
 --
--- AUTO_INCREMENT for table `activity`
+-- AUTO_INCREMENT for table `activities`
 --
-ALTER TABLE `activity`
+ALTER TABLE `activities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
