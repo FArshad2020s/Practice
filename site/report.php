@@ -21,16 +21,35 @@ $activities= $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?><input type="hidden" name="productId" value=<?= $productId ?>><?php
 foreach($activities as $activity){
 	$id = $activity['id'];
-	echo $activity['name'];?><br>normaly&nbsp;&nbsp;&nbsp;&nbsp;
-	hour: <input type="number" name="normally_hours[<?= $id ?>]" min=0 max=15 value=0>
+	echo $activity['name'];?>
+	<br>normaly&nbsp;&nbsp;&nbsp;&nbsp;
+	hour: <select name="normally_hours[<?= $id ?>]">
+		<?php for($i=0;$i<=9;$i++){ ?>
+			      <option value = "<?= "0".$i ?>"><?= "0".$i?></option>
+		<?php } ?>
+		  </select>
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	minute: <input type="number" name="normally_minutes[<?= $id ?>]" min=0 max=59 value=0>
 	
-	<br>
+	minute: <select name="normally_minutes[<?= $id ?>]">
+	  <?php for($i = 10;$i <= 50;$i = $i+10){ ?>
+				<option value="<?= $i ?>"><?= $i ?></option>
+	  <?php } ?>
+			</select><br>
+			
 	overtime&nbsp;&nbsp;&nbsp;&nbsp;
-	hour: <input type="number" name="overtime_hours[<?= $id ?>]" min=0 max=15 value=0>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	minute: <input type="number" name="overtime_minutes[<?= $id ?>]" min=0 max=59 value=0><br><br>
+	hour: <select name="overtime_hours[<?= $id ?>]">
+		<?php for($i=0;$i<=9;$i++){?> 
+			      <option value = "<?= "0".$i ?>"><?= "0".$i?></option>
+		<?php } ?>
+		  </select>
+		  &nbsp;&nbsp;&nbsp;&nbsp;
+	minute: 
+	<select name="overtime_minutes[<?= $id ?>]">
+		<?php for($i=10;$i<=50;$i = $i+10){?>
+			      <option value = "<?= $i ?>"><?= $i ?></option>
+		<?php } ?>
+	</select>
+	<br><br>
 <?php
 }
 ?>

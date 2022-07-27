@@ -37,18 +37,23 @@ function getProducts_of_project(int $projectId):array{
 	return $products;
 }
 
-function findProject(int $productId){
+function getProjectName(int $project_id){
 	global $db;
-	$sql="SELECT `project_id` FROM `products` WHERE `id` = :productId";
-	$stmt = $db->prepare($sql);
-	$stmt->bindParam("productId",$productId);
-	$stmt->execute();
-	$project_id=$stmt->fetch(PDO::FETCH_ASSOC)['project_id'];
 	$sql2="SELECT `name` FROM `projects` WHERE `id` = :project_id";
 	$stmt = $db->prepare($sql2);
 	$stmt->bindParam("project_id",$project_id);
 	$stmt->execute();
 	return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+}
+
+function getProjectId($product_id):?int{
+	global $db;
+	$sql="SELECT `project_id` FROM `products` WHERE `id` = :product_id";
+	$stmt = $db->prepare($sql);
+	$stmt->bindParam("product_id",$product_id);
+	$stmt->execute();
+	$project_id=$stmt->fetch(PDO::FETCH_ASSOC)['project_id'];
+	return $project_id ;
 }
 
 
